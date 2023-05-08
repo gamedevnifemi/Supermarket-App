@@ -5,14 +5,12 @@ while True:
     choice = int(input("Enter a number to specify what you would like to do at ICARUS supermarket: "))
     if choice == 1:
         print("-----------View Items-------------")
+        print("The number of items available is : {}".format(len(items)))
         if len(items) != 0:
             print("        Here are all the items available at ICARUS     ")
             for item in items:
                 for key, value in item.items():
                     print("{}, {}".format(key, value))
-        else:
-            print("The number of items available is : {}".format(len(items)))
-
     elif choice == 2:
         print("-----------Add Items for sale------------")
         print("Give me the details of your item")
