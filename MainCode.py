@@ -1,16 +1,17 @@
+items = []
 while True:
-    items = []
     print("------------------Welcome To ICARUS--------------------------")
     print("1. View Items \n2. Add Items for sale \n3. Purchase Items \n4. Search Items \n5. Edit Items \n6. Exit")
     choice = int(input("Enter a number to specify what you would like to do at ICARUS supermarket: "))
     if choice == 1:
         print("-----------View Items-------------")
+        print("\n")
         print("The number of items available is : {}".format(len(items)))
         if len(items) != 0:
             print("        Here are all the items available at ICARUS     ")
             for item in items:
                 for key, value in item.items():
-                    print("{}, {}".format(key, value))
+                    print("{} : {}".format(key, value))
     elif choice == 2:
         print("-----------Add Items for sale------------")
         print("Give me the details of your item")
@@ -30,6 +31,7 @@ while True:
                 print("Price should be a number")
         print("Your Item has been succesfully added")
         items.append(item)
+        
     elif choice == 3:
         print("--------------Purchase Items---------------")
         print(items)
@@ -76,9 +78,9 @@ while True:
                     except ValueError:
                         print("Price should be a number")
                     print("Your Item has been succesfully updated")
-                    print(item) 
-                else: 
-                    print("Item not found")
+                print(item) 
+            else: 
+                print("Item not found")
     elif choice == 6:
             print("--------------App Closed---------------")
             break
